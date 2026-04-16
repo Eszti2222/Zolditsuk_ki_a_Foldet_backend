@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tevekenysegs', function (Blueprint $table) {
             $table->id('tevekenyseg_id');
             $table->string('tevekenyseg_nev');
-            $table->string('osztaly_nev');
+            $table->string('pontszam');
             $table->timestamps();
         });
     }
