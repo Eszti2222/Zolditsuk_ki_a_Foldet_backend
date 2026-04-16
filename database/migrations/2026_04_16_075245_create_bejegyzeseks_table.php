@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('bejegyzeseks', function (Blueprint $table) {
             $table->id();
+            $table->integer('tevekenyseg_id');
+            $table->string('osztaly_nev');
+            $table->enum('allapot', ['elfogadva','nincs elfogadva']);
             $table->timestamps();
         });
     }
