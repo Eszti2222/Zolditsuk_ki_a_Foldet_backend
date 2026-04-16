@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('bejegyzeseks', function (Blueprint $table) {
             $table->id();
-            $table->integer('tevekenyseg_id');
+            $table->foreignId('tevekenyseg_id')->constrained('tevekenysegs')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('osztaly_nev');
-            $table->enum('allapot', ['elfogadva','nincs elfogadva']);
+            $table->enum('allapot', ['elfogadva', 'nincs elfogadva']);
             $table->timestamps();
         });
     }

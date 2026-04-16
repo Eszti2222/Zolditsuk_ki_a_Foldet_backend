@@ -15,8 +15,8 @@ class Tevekenyseg extends Model
         'pontszam',
     ];
 
-        public function bejegyzes() 
-    { 
-        return $this->hasMany(Bejegyzesek::class); 
-    } 
+    public function bejegyzesek()
+    {
+        return $this->hasMany(Bejegyzes::class);
+    }
 }
