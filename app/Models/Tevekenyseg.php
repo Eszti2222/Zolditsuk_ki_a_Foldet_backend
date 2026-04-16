@@ -9,4 +9,14 @@ class Tevekenyseg extends Model
 {
     /** @use HasFactory<\Database\Factories\TevekenysegFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'tevekenyseg_nev',
+        'pontszam',
+    ];
+
+        public function bejegyzes() 
+    { 
+        return $this->hasMany(Bejegyzesek::class); 
+    } 
 }
